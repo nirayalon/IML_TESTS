@@ -24,7 +24,7 @@ pip install pytest
 To use the tests, simply clone this repository to your local machine using the command:
 
 ```
-git clone https://github.com/your-username/IML_TESTS.git
+git clone https://github.com/nirayalon/IML_TESTS.git
 ```
 > 📝 Replace your-username with your GitHub username.
 
