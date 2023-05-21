@@ -12,7 +12,7 @@ from IMLearn.metrics import accuracy
 
 # Data is just 6 separable points in the plane
 X = np.array([[-2, -1], [-1, -1], [-1, -2], [1, 1], [1, 2], [2, 1]], dtype="f")
-y = np.array([1, 1, 1, 2, 2, 2])
+y = np.array([0, 0, 0, 1, 1, 1])
 
 # Degenerate data with only one feature (still should be separable)
 X1 = np.array([[-2], [-1], [-1], [1], [1], [2]], dtype="f")
@@ -20,7 +20,7 @@ X1 = np.array([[-2], [-1], [-1], [1], [1], [2]], dtype="f")
 # Data that has zero variance in one dimension and needs regularization
 X2 = np.array([[-3, 0], [-2, 0], [-1, 0], [-1, 0], [0, 0], [1, 0], [1, 0], [2, 0], [3, 0]])
 
-y3 = np.array([1, 1, 2, 2, 3, 3])
+y3 = np.array([0, 0, 1, 1, 2, 2])
 
 
 @dataclasses.dataclass
