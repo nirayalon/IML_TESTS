@@ -9,7 +9,7 @@ from IMLearn import BaseEstimator
 from IMLearn.learners.classifiers import DecisionStump
 from IMLearn.metalearners import AdaBoost
 from IMLearn.metrics import misclassification_error
-from Tests.EX4 import test_utils
+import test_utils
 from exercises.adaboost_scenario import generate_data
 
 #         ^
