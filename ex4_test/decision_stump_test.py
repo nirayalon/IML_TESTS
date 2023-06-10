@@ -192,7 +192,7 @@ def assert_threshold_bounds(threshold: float, expected_bounds: str) -> None:
 def test_find_threshold_decision_tree(decision_stump: DecisionStump, test_case: FindThresholdDecisionStumpTestCase):
     threshold, threshold_err = decision_stump._find_threshold(test_case.values, test_case.labels, test_case.sign)
     assert_threshold_bounds(threshold, test_case.expected_threshold_bounds)
-    assert threshold_err == test_case.expected_threshold_err
+    assert np.isclose(threshold_err, test_case.expected_threshold_err)
 
 
 @pytest.mark.parametrize("test_case", FIT_DECISION_STUMP_TEST_CASES, ids=lambda x: x.name)
@@ -206,4 +206,4 @@ def test_fit_decision_tree(decision_stump: DecisionStump, test_case: FitDecision
 @pytest.mark.parametrize("test_case", PREDICTION_DECISION_STUMP_TEST_CASES, ids=lambda x: x.name)
 def test_predict_decision_tree(decision_stump: DecisionStump, test_case: PredictDecisionStumpTestCase):
     decision_stump.fit(X=test_case.X_train, y=test_case.y_train)
-    assert decision_stump.loss(test_case.X_test, test_case.y_test) == test_case.expected_loss
+    assert np.isclose(decision_stump.loss(test_case.X_test, test_case.y_test), test_case.expected_loss)
